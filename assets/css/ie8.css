@@ -1,72 +1,52 @@
 /*
-	Future Imperfect by HTML5 UP
+	Prologue by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Button */
+/* Section/Article */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		border: solid 1px #dedede;
+	section > .last-child, section.last-child, article > .last-child, article.last-child {
+		margin-bottom: 0;
 	}
 
 /* Form */
 
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	input[type="tel"],
-	select,
-	textarea {
-		border: solid 1px #dedede;
+	form input[type="text"],
+	form input[type="email"],
+	form input[type="password"],
+	form select,
+	form textarea {
+		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
 
-/* Post */
+/* Button */
 
-	.post {
-		border: solid 1px #dedede;
-	}
-
-		.post > header {
-			border-bottom: solid 1px #dedede;
-		}
-
-/* Mini Post */
-
-	.mini-post {
-		border: solid 1px #dedede;
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"],
+	button,
+	.button {
+		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
 
 /* Header */
 
-	#header {
-		border-bottom: solid 1px #dedede;
+	#nav ul li a {
+		color: #888;
 	}
 
-		#header .links {
-			border-left: solid 1px #dedede;
+		#nav ul li a.active {
+			background: #1C2022;
 		}
 
-		#header .main ul li {
-			border-left: solid 1px #dedede;
-		}
-
-/* Sidebar */
-
-	#sidebar > * {
-		border-top: solid 1px #dedede;
+	#headerToggle .toggle {
+		background-color: #888;
 	}
 
-/* Menu */
+/* Main */
 
-	#menu {
-		border-left: solid 1px #dedede;
+	#main > section.cover {
+		background-position: auto;
+		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
 	}
-
-		#menu > * {
-			border-top: solid 1px #dedede;
-		}
