@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "面试总结01"
+date:   2018-05-04
+categories: interview summary
+---
+
 #面试题总结
 本菜鸟最近在找前端开发的相关工作，现在把之前面试遇到的问题整理一下，感觉自己真的是太弱了，还学要多练习写项目，加深理解。
 
@@ -8,9 +15,9 @@
 <p>弹性盒子模型提供了一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间，是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。（说人话：解决浏览器和设备的兼容问题。）</p>
 **补充：其他盒子模型**
 <p>标准模型：一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)</p>
-![standar](images\interview01\standar.png)
+![standar](/images/post/interview01/standar.png)
 <p>怪异盒子模型：一个块的总宽度=width+margin(左右)(width已经包含了padding和border的值)</p>
-![unstandar](images\interview01\unstandar.png)
+![unstandar](/images/post/interview01/unstandar.png)
 
 <br>
 ###2.style标签放在body之前和body之后的区别。
@@ -35,7 +42,7 @@ JS要操作DOM结点，如果同时有两个线程，对于同一个结点，一
 还要明确<b>任务队列</b>的类型<br>
 microtask queue(微任务队列)：同一个事件循环中，微任务按队列顺序，串行执行。<br>
 macrotask queue（宏任务队列）：宏任务存在优先级，同一个事件循环中只执行一个。<br>
-![jschart](images\interview01\jschast.png)
+![jschart](/images/post/interview01/jschast.png)
 
 ###4.JS是如何判断一个变量是String型的变量，写出实现函数。
 就是JavaScript的类型检测，有很多方法。<br>
@@ -46,7 +53,7 @@ console.log("success是什么类型:"+typeof "success");
 console.log("false是什么类型:"+typeof false);
 console.log("null是什么类型:"+typeof null);
 ```
-![typeof](images\interview01\typeof.png)
+![typeof](/images/post/interview01/typeof.png)
 
 (2)<b>instanceof运算符判断数组</b><br>
 instanceof实质上是一个三目运算符a instanceof b?alert("true"):alert("false")<br>
@@ -108,7 +115,7 @@ instanceof实质上是一个三目运算符a instanceof b?alert("true"):alert("f
 <b>直接在浏览器中垂直水平居中</b><br>
 
 ```HTML
-&lt;style&gt;
+<style>
 		.a{
        position: relative;
 		}
@@ -122,13 +129,13 @@ instanceof实质上是一个三目运算符a instanceof b?alert("true"):alert("f
 		 margin-top: 100px;
 		 margin-left: -100px;
 		}
-	&lt;/style&gt;
-&lt;body&gt;
+	</style>
+<body>
 <div class="a">
 	<div class="b">			
 	</div>			
 </div>
-&lt;/body&gt;
+</body>
  
 ```
 <b>一个div在另一div中垂直水平居中</b><br>
