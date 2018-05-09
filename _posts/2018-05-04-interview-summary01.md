@@ -47,7 +47,7 @@ JS要操作DOM结点，如果同时有两个线程，对于同一个结点，一
 还要明确<b>任务队列</b>的类型<br>
 microtask queue(微任务队列)：同一个事件循环中，微任务按队列顺序，串行执行。<br>
 macrotask queue（宏任务队列）：宏任务存在优先级，同一个事件循环中只执行一个。<br>
-![jschart](/images/post/interview01/jschast.png)
+![jschart](/images/post/interview01/jschart.png)
 
 ### 4.JS是如何判断一个变量是String型的变量，写出实现函数。
 
