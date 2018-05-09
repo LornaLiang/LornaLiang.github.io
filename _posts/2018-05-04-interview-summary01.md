@@ -2,7 +2,7 @@
 layout: post
 title:  "面试总结01"
 date:   2018-05-04
-categories: interview summary
+tag: interview summary
 ---
 
 # 面试题总结
