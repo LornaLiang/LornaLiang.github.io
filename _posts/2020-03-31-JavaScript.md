@@ -6,8 +6,6 @@ tag: 前端
 ---
 
 # JavaScript篇
-面试高频必问的问题
-------
 ### 1.js的基本类型有哪些？引用类型有哪些？null和undefined的区别。
 <p>基本类型：Number，String，Boolean，Null，undefined。</p>
 <p>引用类型:Object，Array，Function。</p>
@@ -84,7 +82,7 @@ tag: 前端
 11. random函数：返回一个0～1的随机数值。
 12. round函数：返回一个数字的四舍五入值，类型是整数。
 13. sqrt函数：返回一个数字的平方根值。
-   
+
 **（4）String对象**
 
 1. anchor函数：产生一个链接点(anchor)以作超级链接用。
@@ -108,6 +106,4 @@ tag: 前端
 19. toLowerCase函数：将字符串转换为小写。
 20. toUpperCase函数：将字符串转换为大写。           
 
-### 8.如何实现图片滚动懒加载？
-### 9.讲一讲promise。
-### 10.
+### 

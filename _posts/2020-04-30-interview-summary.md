@@ -5,11 +5,7 @@ date:   2020-04-30
 tag: interview summary
 ---
 
-# 面试题总结
-本菜鸟最近在找前端开发的相关工作，现在把之前面试遇到的问题整理一下，感觉自己真的是太弱了，还学要多练习写项目，加深理解。
-
-
-------
+# 题目总结
 ### 1.解释一下CSS 3的flexible盒子模型，并说明该模型是用来解决什么问题。
 
 <p>flexible box 或flexbox，指弹性盒子，是CSS3的一种新的布局模式。弹性盒子模型由弹性容器(flex container)和弹性子元素(flex item)组成。弹性容器通过设置display属性的值为flex或inline-flex将其定义为弹性容器。弹性容器内包含了一个或多个弹性子元素。</p>
@@ -67,7 +63,7 @@ instanceof实质上是一个三目运算符a instanceof b?alert("true"):alert("f
 ```JavaScript
  var a=[];
  console.log(a instanceof Array);//结果为true		
-``` 
+```
 (3)<b>Object.prototype.toString.call方法</b><br>
 ```JavaScript
  var a=[];
