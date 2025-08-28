@@ -27,51 +27,51 @@ SCR本身是FIFO的改进，本质是寻找一个在最近的时钟间隔内没�
 
 1.初始状态为空，编号为7,0,1,2四个页面依次调入内存，访问位置为1
 
-![01](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\01.png)
+![01](..\images\post\OS-SCR\01.png)
 
 2.继续访问0号页面，页面已经存在，无需修改。
 
 3.访问3号页面，页面不在内存中，按照FIFO原则依次选择置换页面同是检查访问位，7,0,1,2号页面访问位均为1，修改为0，修改完成后指针回到1号帧（7号页面），则将7号页面换出，3号页面换入1号帧，并将访问位修改为1，指针移动到2号帧，表示下一个要淘汰的页面时2号帧的0号页面。
 
-![02](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\02.png)
+![02](..\images\post\OS-SCR\02.png)
 
 4.继续访问0号页面，页面已经存在，访问位修改为1，指针移动至下一个访问位为0的页面，即指向下一个要淘汰的页面。
 
-![03](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\03.png)
+![03](..\images\post\OS-SCR\03.png)
 
 
 
 5.访问4号页面，页面不在内存中，此时指针指向1号页面，将1号页面换出，4号换入，并将访问位修改为1，指针移动到下一个要被淘汰的页面。
 
-![04](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\04.png)
+![04](..\images\post\OS-SCR\04.png)
 
 6.访问2号页面，页面存在，修改访问位为1，指针移动。
 
-![05](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\05.png)
+![05](..\images\post\OS-SCR\05.png)
 
 7.接下来继续按顺序访问3,0,3,2号页面，页面都已存在，无需调换，访问位置1。
 
 8.访问1号页面，按照FIFO原则依次检查3,0,2,4号页面访问位，依次置为0，指针回到3号页面，则3号页面换出，1号换入，访问位置为1，此时指针移动到0号页面，表示下一次要淘汰的页面。
 
-![06](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\06.png)
+![06](..\images\post\OS-SCR\06.png)
 
 9.访问3号页面，不在内存中，将指针指向的0号页面调出，3号调入，置访问位为1，指针移动到4号页面，表示下一次要淘汰的页面。
 
-![07](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\07.png)
+![07](..\images\post\OS-SCR\07.png)
 
 10.访问2号页面，在内存中，访问位置为1。
 
-![08](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\08.png)
+![08](..\images\post\OS-SCR\08.png)
 
 ### 总结：
 
-![09](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\09.png)
+![09](..\images\post\OS-SCR\09.png)
 
 缺页率=8/16
 
 ### 按照FIFO原则整个过程如下：
 
-![10](E:\codeManagement\LornaLiang.github.io\images\post\OS-SCR\10.png)
+![10](..\images\post\OS-SCR\10.png)
 
 缺页率=9/16
 
