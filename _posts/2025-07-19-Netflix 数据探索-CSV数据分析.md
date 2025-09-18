@@ -2,7 +2,7 @@
 
 数据来源
 
-[Netflix Movies and TV Shows Dataset]: https://www.kaggle.com/shivamb/netflix-shows
+[Netflix Movies and TV Shows Dataset](https://www.kaggle.com/shivamb/netflix-shows )
 
 ### 1.读取数据
 
@@ -17,6 +17,21 @@ df.head() #读取数据
 ~~~
 
 ![](/images/post/netflix_ana/duqu)
+
+### 2.数据简单清洗
+
+```python
+print(df.info())  # 查看缺失值
+# 填补或删除缺失值
+ df = df.dropna(subset=["director"])  #删除没有导演的数据
+
+```
+
+> [!NOTE]
+>
+> 关于如何处理缺失值，有很多种方法，要按照不同的情况选择合理的方法,随后再讨论。
+
+
 
 ### 2.基础分析
 
@@ -44,7 +59,7 @@ Name: count, dtype: int64
 
 
 
-### 3.
+### 3.可视化
 
 ```python
 sns.countplot(data=df,x="type",palette="Set2") #Set2柔和配色 横轴为类型
@@ -53,8 +68,6 @@ plt.show()
 ```
 
 ![](/images/post/netflix_ana/output_2_1.png)
-
-### 4.
 
 ```python
 #发行年份趋势
@@ -82,10 +95,6 @@ plt.show()
 >
 > 
 
-
-
-### 5.
-
 ```python
 #前5国家
 df['country'].value_counts().head(5).plot(kind="bar")#绘图类型为柱状图
@@ -96,7 +105,7 @@ plt.show()
 
 ![](/images/post/netflix_ana/output_4_0.png)
 
-### 6.
+### 4.导出数据
 
 ```python
 #导出清洗后的数据
