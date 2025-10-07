@@ -1,40 +1,44 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  {% include head.html %}
+---
+layout: default
+---
 
-  <body>
-    {% include header.html %}
+<div class="content-wrapper">
+  <div class="content-wrapper__inner">
 
-    <div class="content-wrapper">
-      <div class="content-wrapper__inner">
-        {{ content }}
-      </div>
+    <!-- 文章列表 -->
+    <div class="main-post-list">
+      <ol class="post-list">
+        {% for post in paginator.posts %}
+        <li>
+          <h2 class="post-list__post-title">
+            <a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a>
+          </h2>
+    
+          <!-- 摘要显示 -->
+          <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 50, "..." }}</p>
+    
+          <!-- 标签和阅读全文按钮 -->
+          <div class="post-list__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" class="post-list__meta--date">
+              <img src="/images/calendar.png" width="20px" /> 
+              {{ post.date | date: "%F" }}
+            </time>
+            <div class="post-list__tags">
+              {% for tag in post.tags %}
+                <a href="/tags#{{ tag }}">{{ tag }}</a>
+              {% endfor %}
+            </div>
+            <a class="btn-border-small" href="{{ post.url }}">阅读全文 »</a>
+          </div>
+    
+          <hr class="post-list__divider" />
+        </li>
+        {% endfor %}
+      </ol>
+    
+      <!-- 分页 -->
+      {% include pagination.html %}
     </div>
-    
-    {% include footer.html %}
-    
-    <!-- MathJax 配置 -->
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$']],
-          processEscapes: true,
-          tags: 'ams'
-        },
-        options: { skipHtmlTags: ['script','style','pre','code'] },
-        startup: {
-          pageReady: function () {
-            MathJax.typesetPromise();
-            return MathJax.startup.defaultPageReady();
-          }
-        },
-        svg: { fontCache: 'global' }
-      };
-    </script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
-  </body>
-</html>
+
+  </div>
+</div>
