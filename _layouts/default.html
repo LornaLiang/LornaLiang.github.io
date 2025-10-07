@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
   {% include head.html %}
 
   <body>
+    {% include header.html %}
 
-
-
-
-
-    <span class="mobile btn-mobile-menu">        
-      <div class="nav_container">
-         <nav class="nav-menu-item" style = "float:right">
-            <i class="nav-menu-item">
-              <a href="/#blog" title="{{site.blog_button.description}}" class="blog-button">  {{site.blog_button.title}}
-              </a>
-            </i>
-            {% for item in site.nav %}
-                <i class="nav-menu-item">
-    
-                  <a href="{{item.url}}" title="{{item.description}}" class="btn-mobile-menu__icon">
-                      {{item.title}}
-                  </a>
-                </i>
-            {% endfor %}
-          </nav>
-      </div>
-    </span>
-    
-    {% include side-panel.html %}
-    
     <div class="content-wrapper">
-        <div class="content-wrapper__inner">
-            {{ content }}
-            {% include footer.html %}
-        </div>
+      <div class="content-wrapper__inner">
+        {{ content }}
+      </div>
     </div>
     
-    {% include external.html %}
-
+    {% include footer.html %}
+    
+    <!-- MathJax 配置 -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$']],
+          processEscapes: true,
+          tags: 'ams'
+        },
+        options: { skipHtmlTags: ['script','style','pre','code'] },
+        startup: {
+          pageReady: function () {
+            MathJax.typesetPromise();
+            return MathJax.startup.defaultPageReady();
+          }
+        },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
   </body>
-
 </html>
