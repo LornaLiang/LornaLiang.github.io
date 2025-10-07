@@ -5,6 +5,13 @@
 
   <body>
 
+<!-- MathJax Support -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
     <span class="mobile btn-mobile-menu">        
       <div class="nav_container">
          <nav class="nav-menu-item" style = "float:right">
@@ -14,7 +21,7 @@
             </i>
             {% for item in site.nav %}
                 <i class="nav-menu-item">
-
+    
                   <a href="{{item.url}}" title="{{item.description}}" class="btn-mobile-menu__icon">
                       {{item.title}}
                   </a>
@@ -25,7 +32,7 @@
     </span>
     
     {% include side-panel.html %}
-
+    
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
             {{ content }}
@@ -34,7 +41,7 @@
     </div>
     
     {% include external.html %}
-    
+
   </body>
 
 </html>
