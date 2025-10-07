@@ -66,3 +66,9 @@ paginate_path: "page/:num/"
 
 
 
+# 启用 MathJax 支持
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  input: GFM
+  syntax_highlighter: rouge
