@@ -1,72 +1,41 @@
-# Basic
+# Basic site info
 title: 梁娜
 subtitle: 个人博客
 description: 欢迎来到我的个人站
-# 头像里面的标题
 avatarTitle: Dase/算法
-# 头像里面的描述
-avatarDesc:
+avatarDesc: ""
 url: "http://LornaLiang.github.io"
 
-# Comment
+# Comment system
 comment:
-    disqus: lorna
-    # uyan: 2143225  # 有言id,登录有言官网申请
+  disqus: lorna
 
 # Social
 social:
-     
-    github: LornaLiang
-    # twitter: 
-    mail: lornaliang123@163.com
+  github: LornaLiang
+  mail: lornaliang123@163.com
 
-# 百度统计 
-# 使用博客模板请去掉或者更换 id 
-
-# Google Analytics
-# 使用博客模板请去掉或者更换 id
-
-
-
-# 《----------------- 上面的信息修改成你自己的 ---------------------------》
-#
-#
-#  _post/ 下的文章更换成你自己的文章
-#  帮忙star一下，感谢~😆 地址： https://github.com/leopardpan/leopardpan.github.io
-#
-#
-# HEAD
-# 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
-
-
+# Permalink & format
 permalink: /:year/:month/:title/
-# Format
 highlighter: rouge
-
-textColor: #FF0000
-
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+textColor: "#FF0000"
 cover_color: clear
 
-# The blog button should not be removed.
+# Blog button & navigation
 blog_button:
-    title: 博客主页
+  title: 博客主页
 
-# Navigation buttons in the front page.s
 nav:
-    - {title: 所有文章, description: archive, url: '/archive'}   
-    - {title: 标签, description: tags, url: '/tags'}      
-    - {title: 关于我, description: about, url: '/about'}      
-    
+  - {title: 所有文章, description: archive, url: '/archive'}
+  - {title: 标签, description: tags, url: '/tags'}
+  - {title: 关于我, description: about, url: '/about'}
 
 # Pagination
-gems: [jekyll-paginate,jekyll-sitemap]
+gems: [jekyll-paginate, jekyll-sitemap]
 paginate: 20
 paginate_path: "page/:num/"
 
-
-
-# 启用 MathJax 支持
+# Markdown & MathJax
 markdown: kramdown
 kramdown:
   math_engine: mathjax
