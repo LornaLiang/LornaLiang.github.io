@@ -37,7 +37,7 @@
     options: { skipHtmlTags: ['script','style','pre','code'] },
     startup: {
       pageReady: function () {
-        MathJax.typesetPromise(); // 强制渲染页面所有公式
+        MathJax.typesetPromise();
         return MathJax.startup.defaultPageReady();
       }
     },

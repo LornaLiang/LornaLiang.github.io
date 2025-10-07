@@ -1422,3 +1422,32 @@ nav a {
   transform: translateY(-3px);
 }
 /*导航按钮-end*/
+/* Typora Block Styles */
+div.tip {
+  border-left: 4px solid #4CAF50;
+  background-color: #f0fff0;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+div.note {
+  border-left: 4px solid #2196F3;
+  background-color: #f0f8ff;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+div.warning {
+  border-left: 4px solid #ff9800;
+  background-color: #fff8e1;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+div.info {
+  border-left: 4px solid #9c27b0;
+  background-color: #f5f0ff;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
