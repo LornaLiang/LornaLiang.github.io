@@ -800,7 +800,29 @@ img::-moz-selection {
     display: block;
     position: relative;
    }
+   .post-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    display: flex;            /* 使用 flex 布局 */
+    flex-direction: column;   /* 垂直排列文章 */
+    gap: 2.2em;               /* 每篇文章间距 */
+    }
+    /* 每篇文章 li */
+  .post-list li {
+    display: block;           /* 块元素 */
+    float: none;              /* 取消浮动 */
+    width: 100%;              /* 占满父容器 */
+    box-sizing: border-box;   /* 防止 padding/边框影响宽度 */
+    margin: 0;
 
+    /* 阴影效果 */
+    -moz-box-shadow: 4px 4px 4px #efefef, -4px -4px 4px #efefef, 4px -4px 4px #efefef, -4px 4px 4px #efefef; 
+    -webkit-box-shadow: 4px 4px 4px #efefef, -4px -4px 4px #efefef, 4px -4px 4px #efefef, -4px 4px 4px #efefef; 
+    box-shadow: 4px 4px 4px #efefef, -4px -4px 4px #efefef, 4px -4px 4px #efefef, -4px 4px 4px #efefef;
+  }
+  /* 
   .post-list {
     margin: 0;
     padding: 0;
@@ -825,6 +847,9 @@ img::-moz-selection {
     4px -4px 4px #efefef, 
     -4px 4px 4px #efefef;
   }
+    */
+
+   
   .post-list li:hover {
     /*transform:scale(1.01,1.01); */
     -moz-box-shadow:4px 4px 4px #c9e1f6, 
@@ -861,16 +886,25 @@ img::-moz-selection {
     color: #000000; 
     background-color: #FAFAFA;
   }
-}
 
 .post-list__meta {
-  display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9em;
+    color: #c7c7c7;
+}
+/*
+.post-list__meta {
+ display: block; 
+  display: flex;
   margin: .7em 0 0 0;
   font-size: .9em;
   color: #c7c7c7; 
   display: inline-block;
 }
-
+*/
 .tag-img-icon img{
   margin-top: 5px;
   margin-left: 5px;
@@ -929,6 +963,7 @@ img::-moz-selection {
   width: 30%;
   margin: 2.2em 0 2.1em 0;
   border-top: 1px solid #DDDDDD; }
+ 
 
 *:focus {
   outline: none; }
