@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  {% include head.html %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <body>
-    {% include header.html %}
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-    <div class="content-wrapper">
-      <div class="content-wrapper__inner">
-        {{ content }}
-      </div>
-    </div>
-    
-    {% include footer.html %}
-    
-    <!-- MathJax 配置 -->
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$']],
-          processEscapes: true,
-          tags: 'ams'
-        },
-        options: { skipHtmlTags: ['script','style','pre','code'] },
-        startup: {
-          pageReady: function () {
-            MathJax.typesetPromise();
-            return MathJax.startup.defaultPageReady();
-          }
-        },
-        svg: { fontCache: 'global' }
-      };
-    </script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
-  </body>
+  <!-- TeXt 主题 CSS -->
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+  <!-- Font Awesome 图标 -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script','style','pre','code'] },
+      startup: { pageReady: function () { return MathJax.startup.defaultPageReady(); } },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <!-- 支持 Typora 的 Tip/Note 样式 -->
+  <link rel="stylesheet" href="{{ "/css/typora-note.css" | prepend: site.baseurl }}">
+</head>
+<body>
+  {% include header.html %}
+
+  <div class="content-wrapper">
+    {{ content }}
+  </div>
+
+  {% include footer.html %}
+</body>
 </html>
