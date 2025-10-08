@@ -1,19 +1,18 @@
-<header class="site-header" style="padding: 1em 2em; background-color: #f5f5f5; border-bottom: 1px solid #ddd;">
-  <div class="site-title" style="font-size: 1.8em; font-weight: bold;">
-    <a href="{{ site.baseurl }}/" style="text-decoration: none; color: #333;">
+<header class="Header">
+  <div class="Header-item Header-item--brand">
+    <!-- 博客标题 -->
+    <a class="Header-link" href="{{ site.baseurl }}/">
       {{ site.title }}
     </a>
+    {% if site.subtitle %}
+      <span class="Header-subtitle">{{ site.subtitle }}</span>
+    {% endif %}
   </div>
 
-  {% if site.subtitle %}
-  <div class="site-subtitle" style="font-size: 1em; color: #666; margin-top: 0.3em;">
-    {{ site.subtitle }}
-  </div>
-  {% endif %}
-
-  <nav class="site-nav" style="margin-top: 1em;">
+  <!-- 导航菜单 -->
+  <nav class="Header-item Header-nav">
     {% for item in site.nav %}
-      <a href="{{ item.url | prepend: site.baseurl }}" style="margin-right: 1em; color: #007acc; text-decoration: none;">
+      <a class="Header-link" href="{{ item.url | prepend: site.baseurl }}" title="{{ item.description }}">
         {{ item.title }}
       </a>
     {% endfor %}
